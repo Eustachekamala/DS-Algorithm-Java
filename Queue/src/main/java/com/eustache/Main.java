@@ -39,7 +39,7 @@ public class Main {
         }
         /*
          * Where are queues useful?
-         * 1. Keyboard Buffer ( letters should appear on the screen in the order they're pressed )
+         * 1. Keyboard Buffer (letters should appear on the screen in the order they're pressed )
          * 2. Printer Queue ( Print jobs should be complicated in order )
          * 3. Used in LinkendLists, PriorityQueues, Breadth-first search
          */
