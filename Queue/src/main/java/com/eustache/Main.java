@@ -1,6 +1,8 @@
 package com.eustache;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -21,8 +23,23 @@ public class Main {
         System.out.println(queue);
 
         /*
+         * Priority Queue = A FIFO data structure that serves elements
+         * with the highest priorities first before elements
+         * with lower priority
+         */
+        Queue<Double> queue1 = new PriorityQueue<>(Collections.reverseOrder());
+        queue1.offer(4.0);
+        queue1.offer(5.0);
+        queue1.offer(6.0);
+        queue1.offer(1.5);
+        queue1.offer(2.5);
+
+        while (!queue1.isEmpty()) {
+            System.out.println(queue1.poll());
+        }
+        /*
          * Where are queues useful?
-         * 1. Keyboard Buffer (letters should appear on the screen in the order they're pressed
+         * 1. Keyboard Buffer ( letters should appear on the screen in the order they're pressed )
          * 2. Printer Queue ( Print jobs should be complicated in order )
          * 3. Used in LinkendLists, PriorityQueues, Breadth-first search
          */
