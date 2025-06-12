@@ -19,18 +19,18 @@ public class Main {
     }
 
     private static int binarySearch(int[] sortedNumbers, int target) {
-        int left = 0;
-        int right = sortedNumbers.length - 1;
-
-        while (left <= right) {
-            int middle = left + (right - left) / 2;
-
-            if (sortedNumbers[middle] == target) {
-                return middle; // Target found
-            } else if (sortedNumbers[middle] < target) {
-                left = middle + 1; // search right half
-            } else {
-                right = middle - 1; // search left half
+        int  low = 0;
+        int high = sortedNumbers.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (target == sortedNumbers[mid]) {
+                return mid;
+            } else if (target < sortedNumbers[mid]) {
+                high = mid - 1;
+            } else if (target > sortedNumbers[mid]) {
+                low = mid + 1;
+            } else  {
+                return mid;
             }
         }
         return -1;
