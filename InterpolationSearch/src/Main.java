@@ -24,7 +24,7 @@ public class Main {
         int high = array.length - 1;
         int low = 0;
         while (value >= array[low] && value <= array[high] && low < high){
-            int probe = low + (high - low) * (value - array[low]) / (array[high] - array[low]);
+            int probe = low + ((value - array[low]) * (high - low)) / (array[high] - array[low]);
             System.out.println("Probe: " + probe);
 
             if (array[probe] == value){
