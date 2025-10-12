@@ -19,7 +19,7 @@ public class Main {
         stack.push("Python");
         stack.push("PHP");
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             stack.push("Java");
         }
         System.out.println(stack);
