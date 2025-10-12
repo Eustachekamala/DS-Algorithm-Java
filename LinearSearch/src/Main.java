@@ -14,23 +14,25 @@ public class Main {
          *                      Useful for Data structures that do not have random access (Linked List)
          */
 
-        int[] array = {1,2,3,4,5,6,7,8,9,10};
-        int index = linearSearch(array);
-
-        if (index != -1){
-            System.out.println("Element found at index " + index);
+        int [] array = {1,3,5,7,9,11,13,15,17,19};
+        int target = 13;
+        int result = linearSearch(array, target);
+        if (result != -1){
+            System.out.println("Target found at index: " + result);
         } else {
-            System.out.println("Element not found");
+            System.out.println("Target not found in array");
         }
     }
 
-    private static int linearSearch(int[]array){
-        for (int i = 0; i < array.length; i++){
-            if (array[i] == 4){
+    private static int linearSearch(int[] array, int target) {
+        for(int i = 0; i < array.length; i++){
+            if (array[i] == target){
                 return i;
+            } else {
+                continue;
             }
         }
-        return -1;
+        return - 1;
     }
 
 }
