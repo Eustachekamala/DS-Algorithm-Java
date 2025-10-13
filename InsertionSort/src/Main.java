@@ -14,24 +14,36 @@ public class Main {
          *                  Best case is O(n) compared to selectionSort O(n^2)
          */
 
-        int[] arr = {9,7,2,8,4,5,7,1,3};
-
-        insertionSort(arr);
-
-        for (int i : arr){
-            System.out.print(i + ", ");
+        int[] nums = {9,7,2,8,4,5,7,1,3};
+        System.out.print("Before Insertion Sort: ");
+        for (int num : nums){
+            System.out.print(num + " ");
+        }
+        insertionSort(nums);
+        System.out.print("\nAfter Insertion Sort: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
         }
     }
 
-    private static void insertionSort(int[] arr) {
-        for (int i = 1; i < arr.length; i++){
-            int temp = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > temp){
-                arr[j+1] = arr[j];
+    private static void insertionSort(int[] nums) {
+        // start at index 1 as we assume the first element is sorted
+        for (int i = 1; i < nums.length; i++){
+            int temp = nums[i]; // current element to be compared
+            int j = i - 1; // index of the previous element
+            // shift elements to the right to make room for temp
+            while (j >= 0 && nums[j] > temp){
+                nums[j+1] = nums[j];
                 j--;
             }
-            arr[j+1] = temp;
+            // insert temp in the correct position
+            nums[j+1] = temp;
+
+            // For visualization of each step
+            System.out.print("\nStep " + i + ": ");
+            for (int num : nums) {
+                System.out.print(num + " ");
+            }
         }
     }
 }
