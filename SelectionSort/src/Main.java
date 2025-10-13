@@ -11,26 +11,39 @@ public class Main {
          *                  large data set = BAD
          */
 
-        int[] arr = {9,2,4,8,5,7,3,6,1};
-        selectionSort(arr);
-
-        for (int i : arr){
-            System.out.print(i);
+        int[] nums = {9,2,4,8,5,7,3,6,1};
+        System.out.print("Before Sort: ");
+        for (int num : nums){
+            System.out.print(num + " ");
         }
 
+        // We call the selection sort method here
+        selectionSort(nums);
+        System.out.println();
+        System.out.print("After Sort: ");
+        // We print the sorted array here
+        for (int num : nums){
+            System.out.print(num + " ");
+        }
     }
 
-    private static void selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
+    private static void selectionSort(int[] nums) {
+        int size = nums.length;
+        for (int i = 0; i < size - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minIndex]) {
+            for (int j = i + 1; j < size; j++) {
+                if (nums[j] < nums[minIndex]) {
                     minIndex = j;
                 }
             }
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
+            int temp = nums[minIndex];
+            nums[minIndex] = nums[i];
+            nums[i] = temp;
+
+            System.out.println();
+            for (int num : nums){
+                System.out.print(num + " ");
+            }
         }
     }
 }
