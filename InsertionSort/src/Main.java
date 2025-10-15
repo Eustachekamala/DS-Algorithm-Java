@@ -9,7 +9,7 @@ public class Main {
          *                  Quadratic time O(n^2)
          *                  small data set = decent
          *                  large data set = BAD
-         *
+         *                  Adaptive = efficient for data sets that are partially sorted
          *                  Less step than bubbleSort
          *                  Best case is O(n) compared to selectionSort O(n^2)
          */
